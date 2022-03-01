@@ -1,0 +1,68 @@
+
+<div class="wrapper">
+  <style>
+  div.a {
+  white-space: nowrap; 
+  width: 120px; 
+  overflow: hidden;
+  text-overflow:ellipsis;
+  border: 0px solid #000000;
+}
+div.b {
+  white-space: nowrap; 
+  width: 80px; 
+  overflow: hidden;
+  text-overflow:ellipsis;
+  border: 0px solid #000000;
+}
+
+  </style>
+    <app-leftmenu></app-leftmenu>
+    <div id="content">
+        <app-header></app-header>
+  
+        
+        <div class="container">
+         <!-- Data Users Table-->
+         <div class="outer-w3-agile mt-3">
+          <h4 class="tittle-w3-agileits">News Detail</h4>
+          <div class="table-responsive">
+              <table class="table">
+                  <thead>
+                      <tr>
+                          <th>Sr.No.</th>
+                          <th>Ref. No.</th>
+                          <th>News Category</th>
+                          <th>Caption</th>
+                          <th>WrittenBy</th>
+                         
+                          <th>Full View</th>
+                          <th>Place</th>
+                          <!--<th scope="col">Written-By</th>    -->                    
+                      </tr>
+                  </thead>  
+                  <tbody>
+                      <tr *ngFor="let ns of _newsdetail | paginate: { itemsPerPage: 6, currentPage: p }; let i=index">
+                          <td>{{i+1}}</td>
+                          <td>#{{ns.NewsUID}}</td>
+                          <td *ngFor="let sb of ns.categorydetail">{{sb.NCategory}}</td>
+                          <td><div class="b"> {{ns.Caption}}</div></td>
+                       
+                          
+                          <td *ngFor="let usr of ns.userinfo">({{usr.Uname}})</td>                                               
+                          
+                          <td><button type="button" class="btn btn-lg btn-outline-primary py-2 price2-btn" data-toggle="modal" data-target="#exampleModal" (click)="getnewsbyId(ns._id)">News</button></td>  
+                          <td><button type="button" class="btn btn-lg btn-outline-primary py-2 price2-btn" data-toggle="modal" data-target="#exampleModal">Select</button></td>                         
+                      </tr>
+                      
+                    
+                  </tbody>
+              </table>
+              <pagination-controls (pageChange)="p = $event"></pagination-controls>
+          </div>
+      </div>
+  <!--Users Data Table End-->
+ 
+  
+      </div>
+       

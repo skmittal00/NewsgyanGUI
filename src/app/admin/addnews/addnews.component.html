@@ -1,0 +1,97 @@
+<div class="wrapper">
+      
+  <app-leftmenu></app-leftmenu>
+  <div id="content">
+    <app-header></app-header>
+
+    <div class="container">
+     
+      <div class="outer-w3-agile mt-3">
+        <form [formGroup]='formEditor'>
+          <div class="card text-center">
+          <div class="card-header">Select News Category</div>
+          <div class="card-body">
+            <select id="inputState" class="form-control" formControlName="CategoryId"  (change)="showAddnewsPanel($event.target.value);">
+              <option value="0">--Select News Category--</option>
+              <option *ngFor="let nc of NCDetail" [ngValue]="nc._id">{{nc.NCategory}}</option>
+            </select>
+          </div>
+        </div>
+          <br>
+
+
+          <!-- <div *ngIf="show" class="card text-center">-->
+          <div class="card text-center">
+            <div class="card-header">Caption and News</div>
+            <div class="card-body"> 
+              <div class="outer-w3-agile mt-3">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <div class="input-group">
+
+                      <input id="msg" type="text" class="form-control" name="msg" placeholder="Caption Info" formControlName="Caption">
+                    </div>
+                  </div>
+                  <br>
+                  
+                  <!--<div id="richTextArea" >
+                       <iframe id="theWYSIWYG" name="theWYSIWYG" frameborder="1">   
+                                           
+                            </iframe>
+                     
+                  </div>-->
+                  <div><editor apiKey="test" [init]="{plugin: 'Hindi'}"   formControlName="News"></editor></div>
+                  <div class="panel-footer">
+                    <div id="theRibbon">
+                      <button type="button" id="btnBold" role="toolbar" value="B" class="btn-primary"><b>B</b></button>
+                      <button type="button" id="btnItelic" role="toolbar" value="I" class="btn-primary"><em>I</em></button>
+                      <button type="button" id="btnUnderline" role="toolbar" value="U" class="btn-primary" style="text-decoration: underline;">U</button>
+
+                      <select id="fontChanger">
+
+                        <option value="Times New Roman">Times New Roman</option>
+                        <option value="Consolas">Consolas</option>
+                        <option value="Tahoma">Tahoma</option>
+                        <option value="Sans-Serif">Sans-Serif</option>
+                        <option value="Calibri">Calibri</option>
+                        <option value="Cursive">Cursive</option>
+                        <option value="Mangal">Mangal</option>
+
+                      </select>
+
+                      <select id="fontSize">
+                        <script>
+                          var fontsize = document.querySelector("fontSize");
+                                      for (var i = 1; i <= 10; i++) {
+                                          document.write("<option value='" + i + "'>" + i + "</option>");
+                                      }
+                                  </script>
+                      </select>
+                      <script type="text/javascript">
+                      function auto(){
+                      var frame= document.getElementById('theWYSIWYG').contentWindow.document.body.innerHTML;
+                      console.log(frame);
+                    }
+                    auto();
+                      </script>
+                      <input type="color" id="fontcolor" title="changefontcolor">
+                      <input type="color" id="hilightcolor" title="changefontcolor">
+
+                      <button id="btnsave" style="float:right; text-decoration:underline;" type="button" (click)="AddNews(formEditor)" value="AddNews">Save News</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+
+            </div>
+          </div>
+<!--End of News Section-->
+
+<br>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>

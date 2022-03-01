@@ -1,0 +1,37 @@
+<div class="wrapper">
+
+  <app-leftmenu></app-leftmenu>
+  <div id="content">
+    <app-header></app-header>
+
+    <div class="container">
+
+      <section class="forms-section">
+
+        <!-- Inline Form -->
+        <div class="outer-w3-agile mt-3">
+          <h4 class="tittle-w3-agileits mb-4">Inline Form</h4>
+          <form #imgform=ngForm >
+            <div>
+              <input type="text" #Caption id="Caption" placeholder="Caption">
+            </div>
+            <br/> <br/>
+            <div>
+              <input #file type="file" id="imgUploader" class="form-control" name="imgUploader" multiple accept='image/*' (change)="OnchangeFile($event)" />
+             
+            </div>
+            <br/>
+            <button (click)="OnUpload()">Upload!</button> <br/> <br/>
+            <div> <img [src]="imgURL" style="width: 200px; height: 200px;"> </div>
+           
+          </form>
+        </div>
+        <!--// Inline Form -->
+      </section>
+
+
+
+    </div>
+   
+  </div>
+</div>

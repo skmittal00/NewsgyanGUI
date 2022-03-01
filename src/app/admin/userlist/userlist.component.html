@@ -1,0 +1,38 @@
+
+<div class="wrapper">
+  <app-leftmenu></app-leftmenu>
+  <div id="content">
+      <app-header></app-header>
+
+      
+      <div class="container">
+       <!-- Data Users Table-->
+       <div class="outer-w3-agile mt-3">
+        <h4 class="tittle-w3-agileits mb-4">Responsive Table</h4>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Sr.No.</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Mobile</th>
+                        <th scope="col">EmailID</th>                            
+                    </tr>
+                </thead>  
+                <tbody>
+                    <tr *ngFor="let us of userlistdetail | paginate: { itemsPerPage: 6, currentPage: p }; let i=index">
+                        <th scope="row">{{i+1}}</th>
+                        <td>{{us.Uname}}</td>
+                        <td>{{us.uMobile}}</td>                        
+                        <td>{{us.uEmail}}</td>                        
+                    </tr>                
+                  
+                </tbody>
+            </table>
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
+    </div>
+<!--Users Data Table End-->
+
+    </div>
+     

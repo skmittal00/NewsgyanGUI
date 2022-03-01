@@ -1,0 +1,47 @@
+div#theRibbon>button{
+    color:black;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+div#drp-group >button{
+color:black;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+div#theRibbon > button:hover{
+    background-color: rgba(199, 221, 215, 0.945);
+    transition:all 0.3s linear 0s;
+}
+select#fontChanger{
+    color:black;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+div#btnsave > button{
+    color:rgb(50, 221, 16);    
+    border: 1px;
+    background-color:rgb(50, 221, 16); ;
+    cursor: pointer;
+    align-self:center;
+}
+div#richTextArea{
+    border:2px solid rgb(40,110,89);
+    height: 100%;
+    width: 746;
+}
+iframe#theWYSIWYG{
+    height: 100%;
+    width: 100%;
+}
+input[type="color"]{
+    border:none;
+    outline:none;
+    background-color: transparent;
+}
+
